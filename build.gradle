@@ -1,0 +1,36 @@
+subprojects {
+	apply plugin: 'java'
+
+	group 'netflix'
+
+	repositories {
+	  maven {
+	      url "${rootProject.projectDir}/repository"
+	  }
+	}
+}
+
+project(':a') {
+	dependencies {
+		compile project(':b')
+	}
+}
+
+project(':b') {
+	dependencies {
+		compile 'netflix:other:1.0'
+	}
+}
+
+project(':c') {
+	dependencies {
+		compile project(':a')
+		compile project(':b')
+	}
+
+	task printCompile() {
+		doFirst {
+			configurations.compile.files.each { println it }
+		}
+	}
+}
