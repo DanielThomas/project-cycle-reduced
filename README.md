@@ -13,7 +13,7 @@ And observe that the external dependency is selected, and is used in preference 
 	     \--- netflix:other:1.0
 	          \--- netflix:a:1.0
 
-The module selection:
+The module selection output will read `Selected netflix:a:1.0 from conflicting modules [netflix:a:unspecified, netflix:a:1.0]`:
 
 	16:19:43.519 [DEBUG] [org.gradle.api.internal.artifacts.repositories.resolver.ExternalResourceResolver] Metadata file found for module 'netflix:a:1.0' in repository 'maven'.
 	16:19:43.519 [DEBUG] [org.gradle.api.internal.artifacts.ivyservice.modulecache.DefaultModuleMetadataCache] Recording module descriptor in cache: netflix:a:1.0 [changing = false]
