@@ -19,6 +19,15 @@ The module selection output will read `Selected netflix:a:1.0 from conflicting m
 	16:19:43.519 [DEBUG] [org.gradle.api.internal.artifacts.ivyservice.modulecache.DefaultModuleMetadataCache] Recording module descriptor in cache: netflix:a:1.0 [changing = false]
 	16:19:43.519 [DEBUG] [org.gradle.api.internal.artifacts.ivyservice.ivyresolve.RepositoryChainComponentMetaDataResolver] Using netflix:a:1.0 from Maven repository 'maven'
 	16:19:43.519 [DEBUG] [org.gradle.api.internal.artifacts.ivyservice.resolveengine.graph.conflicts.DefaultConflictHandler] Selected netflix:a:1.0 from conflicting modules [netflix:a:unspecified, netflix:a:1.0].
+	
+Configuring a version that is higher on the project results in:
+
+	compile - Dependencies for source set 'main' (deprecated, use 'implementation ' instead).
+	+--- project :a
+	|    \--- project :b
+	|         \--- netflix:other:1.0
+	|              \--- netflix:a:1.0 -> project :a (*)
+	\--- project :b (*)
 
 In rare case we've seen these cycles cause outright dependency resolution failures:
 
