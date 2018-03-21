@@ -1,4 +1,4 @@
-Demonstration of external/project dependency cycles.
+Demonstration of external/project dependency cycles for https://github.com/gradle/gradle/issues/4785.
 
 To reproduce, run either:
 
